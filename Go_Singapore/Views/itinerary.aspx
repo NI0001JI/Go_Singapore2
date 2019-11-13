@@ -20,7 +20,7 @@
         </asp:ScriptManager>
     <%
         string id = "";
-
+       // id = "1";
         if (Request.QueryString["id"] == null)
         {
             Response.Redirect("itineraries.aspx");
@@ -29,8 +29,6 @@
         {
             id = Request.QueryString["id"].ToString();
         }
-
-
 
         ItineraryManager im = new ItineraryManager();
         DataTable dt = im.GetItinearyListById(id);
@@ -98,7 +96,10 @@
      <asp:HiddenField ID="HiddenField1" runat="server" />
     <%
         Response.Write(HiddenField1.Value);%>
-    <div id='mapdiv' style='height: 800px;'></div>
+
+        <div id='mapdiv' style='height: 800px;'></div>
+
+    
 <script>
     //co-ordinates from cs
     var waypoint = [];
@@ -128,7 +129,8 @@
         //show current position
 
     function showPosition(position) {
-        marker = new L.Marker([position.coords.latitude, position.coords.longitude], { bounceOnAdd: false }).addTo(map);
+        // marker = new L.Marker([position.coords.latitude, position.coords.longitude], { bounceOnAdd: false }).addTo(map);
+        marker = new L.Marker([1.3466028348212702, 103.681355887293], { bounceOnAdd: false }).addTo(map);
         marker.bindPopup("<b>You are here</b>").openPopup();
         var popup = L.popup()
             .setLatLng([position.coords.latitude, position.coords.longitude])
@@ -137,23 +139,12 @@
         window.lat = position.coords.latitude;
         window.lon = position.coords.longitude;
         console.log(position.coords.latitude + "+" + position.coords.longitude);
-
     }
-    /*
-    showPosition(position)
-        .then(function (v) { // `delay` returns a promise
-            waypoint.push([v.lat, v.lon]);
-        })
-        .catch(function (v) {
-            // Or do something else if it is rejected 
-            // (it would not happen in this example, since `reject` is not called).
-        });
-*/
+  
 
    // waypoint.push([lat, lon]);
   //  alert(lat + 'and' + lon);
-
-    waypoint.push([1.3474651, 103.6819092]);
+    waypoint.push([1.3466028348212702, 103.681355887293]);
     
     //show start and end markers
     $(document).ready(function () {
@@ -176,8 +167,11 @@
             for (i = 0; i < value.length; i++) {
 
                 marker = new L.Marker([value[i].latitude, value[i].longitude], { bounceOnAdd: false }).addTo(map);
-                marker.bindPopup("<b>Location " + count + ": " + value[i].siteName + "</b>").openPopup();
-                count++;
+
+                    marker.bindPopup("<b>Location " + count + ": " + value[i].siteName + "</b>").openPopup();
+                    count++;
+       
+                   
             }
         
     }
@@ -185,7 +179,7 @@
         // create a purple polyline from an array of LatLng points
         var latlngs = waypoint;
 
-        var polyline = L.polyline(latlngs, { color: 'purple' });
+    var polyline = L.polyline(latlngs, { color: 'purple' });
 
             L.Routing.control({
                 waypoints: waypoint
