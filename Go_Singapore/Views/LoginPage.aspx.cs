@@ -45,7 +45,7 @@ namespace Go_Singapore.Views
                 Response.Redirect("Index.aspx");
             }
             
-            string loginStatus = LoginManager.LoginProcess(inputUsername, inputPassword);
+            string loginStatus = DBManager.LoginProcess(inputUsername, inputPassword);
             if(loginStatus == "1")
             {
                 Session["username"] = inputUsername;
