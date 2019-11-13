@@ -1,0 +1,532 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8DEC187-67C9-4397-90E5-0CCCA013B3CA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Go_Singapore</RootNamespace>
+    <AssemblyName>Go_Singapore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44379</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\GoSingaporeDB.mdf" />
+    <Content Include="App_Data\GoSingaporeDB_log.ldf">
+      <DependentUpon>GoSingaporeDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Views\admin.aspx" />
+    <Content Include="Views\css\leaflet-routing-machine.css" />
+    <Content Include="Views\css\leaflet.css" />
+    <Content Include="Views\images\layers-2x.png" />
+    <Content Include="Views\images\layers.png" />
+    <Content Include="Views\images\marker-icon-2x.png" />
+    <Content Include="Views\images\marker-icon.png" />
+    <Content Include="Views\images\marker-shadow.png" />
+    <Content Include="Views\itineraries.aspx" />
+    <Content Include="Views\itinerary.aspx" />
+    <Content Include="Views\js\jquery-3.3.1.min.js" />
+    <Content Include="Views\js\leaflet-routing-machine.js" />
+    <Content Include="Views\js\leaflet.js" />
+    <Content Include="Views\LoginPage.aspx" />
+    <Content Include="Views\about.aspx" />
+    <Content Include="Views\css\ajax-loader.gif" />
+    <Content Include="Views\css\animate.css" />
+    <Content Include="Views\css\aos.css" />
+    <Content Include="Views\css\bootstrap-datepicker.css" />
+    <Content Include="Views\css\bootstrap.min.css" />
+    <Content Include="Views\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="Views\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Views\css\css\bootstrap-reboot.css" />
+    <Content Include="Views\css\css\mixins\_text-hide.css" />
+    <Content Include="Views\css\flaticon.css" />
+    <Content Include="Views\css\icomoon.css" />
+    <Content Include="Views\css\ionicons.min.css" />
+    <Content Include="Views\css\jquery.timepicker.css" />
+    <Content Include="Views\css\magnific-popup.css" />
+    <Content Include="Views\css\open-iconic-bootstrap.min.css" />
+    <Content Include="Views\css\owl.carousel.min.css" />
+    <Content Include="Views\css\owl.theme.default.min.css" />
+    <Content Include="Views\css\style.css" />
+    <Content Include="Views\fonts\flaticon\backup.txt" />
+    <Content Include="Views\fonts\flaticon\font\flaticon.css" />
+    <Content Include="Views\fonts\flaticon\font\flaticon.html" />
+    <Content Include="Views\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="Views\fonts\icomoon\icomoon.svg" />
+    <Content Include="Views\fonts\ionicons\css\ionicons.min.css" />
+    <Content Include="Views\fonts\ionicons\fonts\ionicons.svg" />
+    <Content Include="Views\fonts\open-iconic\open-iconic.svg" />
+    <Content Include="Views\images\about.jpg" />
+    <Content Include="Views\images\attractions\chinatown.jpg" />
+    <Content Include="Views\images\attractions\clarkequay.jpg" />
+    <Content Include="Views\images\attractions\flyer.jpg" />
+    <Content Include="Views\images\attractions\gardenbythebay.jpg" />
+    <Content Include="Views\images\attractions\sentosa.jpg" />
+    <Content Include="Views\images\attractions\uss.jpg" />
+    <Content Include="Views\images\attractions\zoo.jpg" />
+    <Content Include="Views\images\bg_1.jpg" />
+    <Content Include="Views\images\bg_2.jpg" />
+    <Content Include="Views\images\bg_3.jpg" />
+    <Content Include="Views\images\bg_4.jpg" />
+    <Content Include="Views\images\bg_5.jpg" />
+    <Content Include="Views\images\destination-1.jpg" />
+    <Content Include="Views\images\destination-2.jpg" />
+    <Content Include="Views\images\destination-3.jpg" />
+    <Content Include="Views\images\destination-4.jpg" />
+    <Content Include="Views\images\destination-5.jpg" />
+    <Content Include="Views\images\destination-6.jpg" />
+    <Content Include="Views\images\download.jpg" />
+    <Content Include="Views\images\hotel-1.jpg" />
+    <Content Include="Views\images\hotel-2.jpg" />
+    <Content Include="Views\images\hotel-3.jpg" />
+    <Content Include="Views\images\hotel-4.jpg" />
+    <Content Include="Views\images\hotel-5.jpg" />
+    <Content Include="Views\images\hotel-6.jpg" />
+    <Content Include="Views\images\image_1.jpg" />
+    <Content Include="Views\images\image_2.jpg" />
+    <Content Include="Views\images\image_3.jpg" />
+    <Content Include="Views\images\image_4.jpg" />
+    <Content Include="Views\images\image_5.jpg" />
+    <Content Include="Views\images\image_6.jpg" />
+    <Content Include="Views\images\image_7.jpg" />
+    <Content Include="Views\images\image_8.jpg" />
+    <Content Include="Views\images\loc.png" />
+    <Content Include="Views\images\person_1.jpg" />
+    <Content Include="Views\images\person_2.jpg" />
+    <Content Include="Views\images\person_3.jpg" />
+    <Content Include="Views\images\person_4.jpg" />
+    <Content Include="Views\images\restaurant-1.jpg" />
+    <Content Include="Views\images\restaurant-2.jpg" />
+    <Content Include="Views\images\restaurant-3.jpg" />
+    <Content Include="Views\images\restaurant-4.jpg" />
+    <Content Include="Views\images\restaurant-5.jpg" />
+    <Content Include="Views\images\restaurant-7.jpg" />
+    <Content Include="Views\images\room-1.jpg" />
+    <Content Include="Views\images\room-2.jpg" />
+    <Content Include="Views\images\room-3.jpg" />
+    <Content Include="Views\images\room-4.jpg" />
+    <Content Include="Views\images\room-5.jpg" />
+    <Content Include="Views\images\room-6.jpg" />
+    <Content Include="Views\index.aspx" />
+    <Content Include="Views\js\aos.js" />
+    <Content Include="Views\js\bootstrap-datepicker.js" />
+    <Content Include="Views\js\bootstrap.min.js" />
+    <Content Include="Views\js\google-map.js" />
+    <Content Include="Views\js\jquery-3.2.1.min.js" />
+    <Content Include="Views\js\jquery-migrate-3.0.1.min.js" />
+    <Content Include="Views\js\jquery.animateNumber.min.js" />
+    <Content Include="Views\js\jquery.easing.1.3.js" />
+    <Content Include="Views\js\jquery.magnific-popup.min.js" />
+    <Content Include="Views\js\jquery.min.js" />
+    <Content Include="Views\js\jquery.stellar.min.js" />
+    <Content Include="Views\js\jquery.waypoints.min.js" />
+    <Content Include="Views\js\main.js" />
+    <Content Include="Views\js\owl.carousel.min.js" />
+    <Content Include="Views\js\popper.min.js" />
+    <Content Include="Views\js\range.js" />
+    <Content Include="Views\js\scrollax.min.js" />
+    <Content Include="Views\loginassets\css\main.css" />
+    <Content Include="Views\loginassets\css\util.css" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Views\loginassets\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Views\loginassets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Views\loginassets\fonts\montserrat\OFL.txt" />
+    <Content Include="Views\loginassets\fonts\raleway\OFL.txt" />
+    <Content Include="Views\Logout.aspx" />
+    <Content Include="Views\Register.aspx" />
+    <Content Include="Views\search.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AdminDataManager.cs" />
+    <Compile Include="Controllers\APIManager.cs" />
+    <Compile Include="Controllers\CountryMatcher.cs" />
+    <Compile Include="Controllers\DBManager.cs" />
+    <Compile Include="Controllers\Email.cs" />
+    <Compile Include="Controllers\ItineraryManager.cs" />
+    <Compile Include="Controllers\LoginManager.cs" />
+    <Compile Include="Controllers\APIs.cs" />
+    <Compile Include="Views\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\itineraries.aspx.cs">
+      <DependentUpon>itineraries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\itineraries.aspx.designer.cs">
+      <DependentUpon>itineraries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\itinerary.aspx.cs">
+      <DependentUpon>itinerary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\itinerary.aspx.designer.cs">
+      <DependentUpon>itinerary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Database.cs" />
+    <Compile Include="Models\ItineraryEntity.cs" />
+    <Compile Include="Models\UserEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Views\css\.DS_Store" />
+    <Content Include="Views\css\bootstrap\.DS_Store" />
+    <Content Include="Views\css\css\.DS_Store" />
+    <Content Include="Views\fonts\.DS_Store" />
+    <Content Include="Views\fonts\flaticon\.DS_Store" />
+    <Content Include="Views\fonts\flaticon\font\Flaticon.eot" />
+    <Content Include="Views\fonts\flaticon\font\Flaticon.ttf" />
+    <Content Include="Views\fonts\flaticon\font\Flaticon.woff" />
+    <Content Include="Views\fonts\flaticon\font\_flaticon.scss" />
+    <Content Include="Views\fonts\flaticon\license\license.pdf" />
+    <Content Include="Views\fonts\icomoon\icomoon.eot" />
+    <Content Include="Views\fonts\icomoon\icomoon.ttf" />
+    <Content Include="Views\fonts\icomoon\icomoon.woff" />
+    <Content Include="Views\fonts\ionicons\css\_ionicons.scss" />
+    <Content Include="Views\fonts\ionicons\fonts\.DS_Store" />
+    <Content Include="Views\fonts\ionicons\fonts\ionicons.eot" />
+    <Content Include="Views\fonts\ionicons\fonts\ionicons.ttf" />
+    <Content Include="Views\fonts\ionicons\fonts\ionicons.woff" />
+    <Content Include="Views\fonts\ionicons\fonts\ionicons.woff2" />
+    <Content Include="Views\fonts\open-iconic\open-iconic.eot" />
+    <Content Include="Views\fonts\open-iconic\open-iconic.otf" />
+    <Content Include="Views\fonts\open-iconic\open-iconic.ttf" />
+    <Content Include="Views\fonts\open-iconic\open-iconic.woff" />
+    <Content Include="Views\images\.DS_Store" />
+    <Content Include="Views\js\.DS_Store" />
+    <Content Include="Views\MasterPage.master" />
+    <Content Include="Views\scss\.DS_Store" />
+    <Content Include="Views\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Views\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Views\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Views\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Views\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Views\scss\bootstrap\_alert.scss" />
+    <Content Include="Views\scss\bootstrap\_badge.scss" />
+    <Content Include="Views\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Views\scss\bootstrap\_button-group.scss" />
+    <Content Include="Views\scss\bootstrap\_buttons.scss" />
+    <Content Include="Views\scss\bootstrap\_card.scss" />
+    <Content Include="Views\scss\bootstrap\_carousel.scss" />
+    <Content Include="Views\scss\bootstrap\_close.scss" />
+    <Content Include="Views\scss\bootstrap\_code.scss" />
+    <Content Include="Views\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Views\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Views\scss\bootstrap\_forms.scss" />
+    <Content Include="Views\scss\bootstrap\_functions.scss" />
+    <Content Include="Views\scss\bootstrap\_grid.scss" />
+    <Content Include="Views\scss\bootstrap\_images.scss" />
+    <Content Include="Views\scss\bootstrap\_input-group.scss" />
+    <Content Include="Views\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Views\scss\bootstrap\_list-group.scss" />
+    <Content Include="Views\scss\bootstrap\_media.scss" />
+    <Content Include="Views\scss\bootstrap\_mixins.scss" />
+    <Content Include="Views\scss\bootstrap\_modal.scss" />
+    <Content Include="Views\scss\bootstrap\_nav.scss" />
+    <Content Include="Views\scss\bootstrap\_navbar.scss" />
+    <Content Include="Views\scss\bootstrap\_pagination.scss" />
+    <Content Include="Views\scss\bootstrap\_popover.scss" />
+    <Content Include="Views\scss\bootstrap\_print.scss" />
+    <Content Include="Views\scss\bootstrap\_progress.scss" />
+    <Content Include="Views\scss\bootstrap\_reboot.scss" />
+    <Content Include="Views\scss\bootstrap\_root.scss" />
+    <Content Include="Views\scss\bootstrap\_tables.scss" />
+    <Content Include="Views\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Views\scss\bootstrap\_transitions.scss" />
+    <Content Include="Views\scss\bootstrap\_type.scss" />
+    <Content Include="Views\scss\bootstrap\_utilities.scss" />
+    <Content Include="Views\scss\bootstrap\_variables.scss" />
+    <Content Include="Views\scss\style.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Views\loginassets\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Views\loginassets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Views\loginassets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Views\loginassets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Views\loginassets\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Views\loginassets\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Views\loginassets\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-Black.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-BlackItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-Bold.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-BoldItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-ExtraBold.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-ExtraBoldItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-ExtraLight.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-ExtraLightItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-Italic.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-Light.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-LightItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-Medium.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-MediumItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-Regular.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-SemiBold.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-SemiBoldItalic.ttf" />
+    <Content Include="Views\loginassets\fonts\raleway\Raleway-Thin.ttf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50518</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44379/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
